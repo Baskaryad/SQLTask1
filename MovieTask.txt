@@ -1,0 +1,98 @@
+1. Movie should have multiple media(Video or Image)   
+
+-- create
+CREATE TABLE MOVIE (  
+    movie_Id int, 
+    title text,
+    image blob,
+    video blob
+ );
+
+-- insert
+INSERT INTO MOVIE  (movie_Id,title,image,video) VALUES (0001, 'Avengers','Avengers.jpg','https://youtu.be/eOrNdBpGMv8');
+INSERT INTO MOVIE  (movie_Id,title,image,video) VALUES (0002, 'Billa','Billa.jpg','https://youtu.be/ywSb-VOFlLg');
+INSERT INTO MOVIE  (movie_Id,title,image,video) VALUES (0003, 'Captain America','Captainamerica.avif','https://youtu.be/JerVrbLldXw');
+INSERT INTO MOVIE  (movie_Id,title,image,video) VALUES (0004, 'Gilli','gilli.jpg','https://youtu.be/EtJXEmW_XNM');
+INSERT INTO MOVIE  (movie_Id,title,image,video) VALUES (0005, 'Kgf Chapter 1','Kgfchapter1','https://youtu.be/3oxo-wacE50');
+
+-- fetch 
+SELECT * FROM MOVIE ;
+
+2. Movie can belongs to multiple Genre
+
+-- create
+CREATE TABLE MOVIE (  
+    movie_Id int, 
+    title text,
+    genre text
+ );
+
+-- insert
+INSERT INTO MOVIE  (movie_Id,title,genre) VALUES (0001, 'Avengers','Fantasy');
+INSERT INTO MOVIE  (movie_Id,title,genre) VALUES (0002, 'Billa','Action');
+INSERT INTO MOVIE  (movie_Id,title,genre) VALUES (0003, 'Captain America','Fantasy');
+INSERT INTO MOVIE  (movie_Id,title,genre) VALUES (0004, 'Gilli','Action & Drama');
+INSERT INTO MOVIE  (movie_Id,title,genre) VALUES (0005, 'Kgf Chapter 1','Action');
+
+-- fetch 
+SELECT * FROM MOVIE ;
+
+3. Movie can have multiple reviews and Review can belongs to a user
+
+-- create
+CREATE TABLE MOVIE (  
+    movie_Id int, 
+    user text,
+    title text,
+    review_rating float,
+    review_type text
+ );
+
+-- insert
+INSERT INTO MOVIE  (movie_Id,user,title,review_rating,review_type) VALUES (0001, 'user1', 'Avengers','8.0','Excellent');
+INSERT INTO MOVIE  (movie_Id,user,title,review_rating,review_type) VALUES (0002, 'user2', 'Billa','7.3','Super Good');
+INSERT INTO MOVIE  (movie_Id,user,title,review_rating,review_type) VALUES (0003, 'user3', 'Captain America','6.9','Good');
+INSERT INTO MOVIE  (movie_Id,user,title,review_rating,review_type) VALUES (0004, 'user4', 'Gilli','8.1','Excellent');
+INSERT INTO MOVIE  (movie_Id,user,title,review_rating,review_type) VALUES (0005, 'user5', 'Kgf Chapter 1','8.2','Excellent');
+
+-- fetch 
+SELECT * FROM MOVIE ;
+
+4. Artist can have multiple skills
+
+-- create
+CREATE TABLE ARTIST (  
+    Id int,
+    artist_name text,
+    skills text
+ );
+
+-- insert
+INSERT INTO ARTIST  (Id,artist_name,skills) VALUES (0001, 'Ajith Kumar','Hero & Bike Racer');
+INSERT INTO ARTIST  (Id,artist_name,skills) VALUES (0002, 'Dhanush','Hero, Singer, Lyricst, Producer & Director');
+INSERT INTO ARTIST  (Id,artist_name,skills) VALUES (0003, 'Silambarasan T R','Hero, Singer, Lyricst, Music Director & Director');
+INSERT INTO ARTIST  (Id,artist_name,skills) VALUES (0004, 'Sivakarthikeyan','Hero, Singer, Lyricst & Producer');
+INSERT INTO ARTIST  (Id,artist_name,skills) VALUES (0005, 'Vijay','Hero, Singer & Producer');
+
+-- fetch 
+SELECT * FROM ARTIST ;
+
+5. Artist can perform multiple role in a single film
+
+-- create
+CREATE TABLE ARTIST (  
+    Id int,
+    artist_name text,
+    roles text,
+    movie_name text
+ );
+
+-- insert
+INSERT INTO ARTIST  (Id,artist_name,roles,movie_name) VALUES (0001, 'Ajith Kumar','Handicap & Thief', 'Villain');
+INSERT INTO ARTIST  (Id,artist_name,roles,movie_name) VALUES (0002, 'Dhanush','Orphan & Student', 'Kadhal Kondein');
+INSERT INTO ARTIST  (Id,artist_name,roles,movie_name) VALUES (0003, 'Silambarasan T R','Accused & Police', 'AYM');
+INSERT INTO ARTIST  (Id,artist_name,roles,movie_name) VALUES (0004, 'Sivakarthikeyan','Doctor & Defence Officer', 'Doctor');
+INSERT INTO ARTIST  (Id,artist_name,roles,movie_name) VALUES (0005, 'Vijay','Doctor & Magician', 'Mersal');
+
+-- fetch 
+SELECT * FROM ARTIST ;
